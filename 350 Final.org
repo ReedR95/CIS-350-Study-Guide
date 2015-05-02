@@ -312,6 +312,19 @@
        - Replace floating-point numbers with ints
        - etc.
 ** TODO code smells and refactoring
+     - *Code Smells*
+       - Code duplicated in more than one method in the same class - /Extract Method/
+       - Long method - /Extract Method/
+       - Large class - /Extract Class/
+       - Primitive Obsession (using too many primitive types rather than records) - /Replace Data Value With Object/
+       - Message Chain - /Hide Delegate/
+       - Switch Statement - /Replace Condition with Polymorphism/
+       - Duplicated code in two unrelated classes - /Extract Class/
+       - Code duplicated in more than one sibling classes - /Pull-Up Method/
+       - Two very similar methods - /Form Template Method/ and /Extract Method/
+       - Too many temporary variables - /Replace Temp with Query/
+       - Long list of parameters - /Introduce Parameter Object/ and /Preserve Whole Object/
+       - Feature Envy (when one of the methods seems attached to a class other than the one it is in) - /Move Method/
 ** TODO testing basics
 ** TODO black-box testing
 ** TODO white-box testing
