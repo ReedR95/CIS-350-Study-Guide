@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>350 Final</title>
-<!-- 2015-05-05 Tue 01:26 -->
+<!-- 2015-05-05 Tue 13:18 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Reed Rosenbluth" />
@@ -241,7 +241,7 @@ was assumed to be working correctly
 <ul class="org-ul">
 <li>During treatment, machine stopped and reported "no dose"
 </li>
-<li>This was a common occurence, so the technician pressed "P"
+<li>This was a common occurrence, so the technician pressed "P"
 to proceed and re-deliver the dose
 </li>
 <li>This happened four more times, after which the machine went
@@ -598,6 +598,8 @@ one asap
 </pre>
 </div>
 </li>
+<li>The <code>join()</code> method will block until the thread finishes.
+</li>
 <li>Threads can make code slower&#x2026; how?
 </li>
 <li>A <b>Race Condition</b> occurs when two or more threads can access
@@ -879,6 +881,53 @@ controlled manner
 </li>
 </ul>
 </li>
+<li><b>Refactoring Methods</b>
+<ul class="org-ul">
+<li><b>Extract Method</b>
+<ul class="org-ul">
+<li>turn fragment of code into a method whose name explains the
+purpose of the method
+</li>
+</ul>
+</li>
+<li><b>Extract Class</b>
+<ul class="org-ul">
+<li>you have one class doing work that should be done by two.
+</li>
+<li>create a new class and move the relevant fields and methods
+from the old class into the new clas.
+</li>
+</ul>
+</li>
+<li><b>Replace Data Value with Object</b>
+<ul class="org-ul">
+<li>you have a data item that needs additional data or
+behavior.
+</li>
+<li>turn the data item into an object.
+</li>
+</ul>
+</li>
+<li><b>Hide Delegate</b>
+<ul class="org-ul">
+<li>A client is calling a delegate class of an object.
+</li>
+<li>create methods to hide the delegate
+</li>
+</ul>
+</li>
+<li><b>Replace Conditional w/ Polymorphism</b>
+<ul class="org-ul">
+<li>you have a conditional that chooses different behavior
+depending on the type of an object
+</li>
+<li>Move each leg of the conditional to an overriding method in
+a subclass. Make the original method abstract.
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><b>Code Smells</b>
@@ -897,11 +946,34 @@ controlled manner
 </li>
 <li><b>Large Class</b>
 <ul class="org-ul">
-<li><i>Extract Class, Extract Subclass</i>
+<li><i>Extract Class</i>
 </li>
 </ul>
 </li>
-<li><b>Long Parameter List</b>
+<li><b>Primitive Obsession</b>
+<ul class="org-ul">
+<li>using too many primitive types rather than records
+</li>
+<li>use <i>Replace Data Value with Object</i>
+</li>
+</ul>
+</li>
+<li><b>Message Chains</b>
+<ul class="org-ul">
+<li>when a client asks one object for another object, which the
+client then asks for yet another object, etc.
+</li>
+<li>use <i>Hide Delegate</i>
+</li>
+</ul>
+</li>
+<li><b>Switch Statements</b>
+<ul class="org-ul">
+<li>use <i>Replace Conditional with Polymorphism</i>
+</li>
+</ul>
+</li>
+<li>Long Parameter List
 <ul class="org-ul">
 <li><i>Replace Parameter with Method</i>
 <ul class="org-ul">
@@ -925,7 +997,7 @@ it with the object itself.
 </li>
 </ul>
 </li>
-<li><b>Divergent Change</b>
+<li>Divergent Change
 <ul class="org-ul">
 <li>when one class is commonly changed in different ways for
 different reasons.
@@ -938,7 +1010,7 @@ use <i>Extract Class</i> to put them all together.
 </li>
 </ul>
 </li>
-<li><b>Shotgun Surgery</b>
+<li>Shotgun Surgery
 <ul class="org-ul">
 <li>opposite of divergent change.
 </li>
@@ -955,7 +1027,7 @@ together
 </li>
 </ul>
 </li>
-<li><b>Feature Envy</b>
+<li>Feature Envy
 <ul class="org-ul">
 <li>a method that seems more interested in a class other than the
 one it actually is in.
@@ -967,7 +1039,7 @@ one it actually is in.
 </li>
 </ul>
 </li>
-<li><b>Data Clumps</b>
+<li>Data Clumps
 <ul class="org-ul">
 <li>bunches of data that hang around together should be made into
 their own object.
@@ -980,30 +1052,7 @@ classes.
 </li>
 </ul>
 </li>
-<li><b>Primitive Obsession</b>
-<ul class="org-ul">
-<li>using too many primitive types rather than records
-</li>
-<li>use <i>Replace Data Value with Object</i>
-</li>
-</ul>
-</li>
-<li><b>Switch Statements</b>
-<ul class="org-ul">
-<li>consider polymorphism
-</li>
-<li>use <i>Extract Method</i> to extract the switch statement and then
-<i>Move Method</i> to get it onto the class where the polymorphism
-is needed.
-</li>
-<li>then either <i>Replace Type Code with Subclasses</i> or <i>Replace
-Type Code with State or Strategy</i>
-</li>
-<li>then <i>Replace Conditional with Polymorphism</i>
-</li>
-</ul>
-</li>
-<li><b>Parallel Inheritance Hierarchies</b>
+<li>Parallel Inheritance Hierarchies
 <ul class="org-ul">
 <li>special case of shotgun surgery
 </li>
@@ -1014,7 +1063,7 @@ have to make a subclass of another.
 </li>
 </ul>
 </li>
-<li><b>Lazy Class</b>
+<li>Lazy Class
 <ul class="org-ul">
 <li>a class that isn't doing enough to pay for its existence
 should be eliminated.
@@ -1023,7 +1072,7 @@ should be eliminated.
 </li>
 </ul>
 </li>
-<li><b>Speculative Generality</b>
+<li>Speculative Generality
 <ul class="org-ul">
 <li>when speculative hooks and features are added that aren't
 necessary yet.
@@ -1040,7 +1089,7 @@ Parameter</i>
 </li>
 </ul>
 </li>
-<li><b>Temporary Field</b>
+<li>Temporary Field
 <ul class="org-ul">
 <li>when an instance variable is set only in certain circumstances
 </li>
@@ -1048,16 +1097,7 @@ Parameter</i>
 </li>
 </ul>
 </li>
-<li><b>Message Chains</b>
-<ul class="org-ul">
-<li>when a client asks one object for another object, which the
-client then asks for yet another object, etc.
-</li>
-<li>use <i>Hide Delegate</i>
-</li>
-</ul>
-</li>
-<li><b>Middle Man</b>
+<li>Middle Man
 <ul class="org-ul">
 <li>when too many class methods are delegating tasks to another
 class
@@ -1066,7 +1106,7 @@ class
 </li>
 </ul>
 </li>
-<li><b>Inappropriate Intimacy</b>
+<li>Inappropriate Intimacy
 <ul class="org-ul">
 <li>when classes delve into other classes private data
 </li>
@@ -1074,14 +1114,14 @@ class
 </li>
 </ul>
 </li>
-<li><b>Alternative Classes with Different Interfaces</b>
+<li>Alternative Classes with Different Interfaces
 <ul class="org-ul">
 <li>use <i>Rename Method</i> on any methods that do the same thing but
 have different signatures for what they do.
 </li>
 </ul>
 </li>
-<li><b>Incomplete Library Class</b>
+<li>Incomplete Library Class
 <ul class="org-ul">
 <li>use <i>Introduce Foreign Method</i> to add methods you wish the
 library class had
@@ -1091,7 +1131,7 @@ methods.
 </li>
 </ul>
 </li>
-<li><b>Data Class</b>
+<li>Data Class
 <ul class="org-ul">
 <li>Classes that have fields, getters and setters, and nothing
 else
@@ -1100,7 +1140,7 @@ else
 </li>
 </ul>
 </li>
-<li><b>Refused Bequest</b>
+<li>Refused Bequest
 <ul class="org-ul">
 <li>when subclasses don't need all/most of the methods and data of
 their parents
@@ -1110,7 +1150,7 @@ unused methods to the sibling.
 </li>
 </ul>
 </li>
-<li><b>Comments</b>
+<li>Comments
 <ul class="org-ul">
 <li>when thick comments are an indicator of bad code
 </li>
@@ -1153,7 +1193,7 @@ as expected
 <b>subsystem design</b>
 <ul class="org-ul">
 <li>tests whether the <b>interfaces between modules</b> in a give
-subsystem have consistent assumtions and communicate correctly.
+subsystem have consistent assumptions and communicate correctly.
 </li>
 </ul>
 </li>
@@ -1297,7 +1337,7 @@ the equivalence classes (multiple fault assumption).
 </li>
 <li><b>Weak Robust</b>
 <ul class="org-ul">
-<li>considers invalid values, single fault assumtion
+<li>considers invalid values, single fault assumption
 </li>
 </ul>
 </li>
@@ -1396,7 +1436,7 @@ functionality it had before the updates.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Reed Rosenbluth</p>
-<p class="date">Created: 2015-05-05 Tue 01:26</p>
+<p class="date">Created: 2015-05-05 Tue 13:18</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
