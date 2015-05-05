@@ -549,7 +549,18 @@
          you've covered 100% of the paths, you've covered 100% of the
          statements and branches.
 ** DONE Debugging
-   - "Scientific Method"
+   - Murphy's levels
+     1. *Deduction*: read the code and try to reason about it
+     2. *Observation*: execute the code once (maybe using a logger or
+        debugger) and consider the values of variables, perhaps in
+        relation to expected invariants, and look for transition from
+        good state to error state
+     3. *Induction*: compare properties (black-box coverage, white-box
+        coverage) of passing and failing test cases and look for
+        differences that may be indicative of the cause
+     4. *Experimentation*: modify the code so that failing tests pass,
+        then compare differences between failing and passing tests
+   - "Scientific Method" (from reading)
      - *Stabilize the error*
        - find the simplest test case that still produces the error
      - *Locate the source of the error (the "fault")*

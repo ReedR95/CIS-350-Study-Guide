@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>350 Final</title>
-<!-- 2015-05-05 Tue 13:18 -->
+<!-- 2015-05-05 Tue 13:22 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Reed Rosenbluth" />
@@ -1391,7 +1391,25 @@ statements and branches.
 <h3 id="sec-3-11"><span class="section-number-3">3.11</span> <span class="done DONE">DONE</span> Debugging</h3>
 <div class="outline-text-3" id="text-3-11">
 <ul class="org-ul">
-<li>"Scientific Method"
+<li>Murphy's levels
+<ol class="org-ol">
+<li><b>Deduction</b>: read the code and try to reason about it
+</li>
+<li><b>Observation</b>: execute the code once (maybe using a logger or
+debugger) and consider the values of variables, perhaps in
+relation to expected invariants, and look for transition from
+good state to error state
+</li>
+<li><b>Induction</b>: compare properties (black-box coverage, white-box
+coverage) of passing and failing test cases and look for
+differences that may be indicative of the cause
+</li>
+<li><b>Experimentation</b>: modify the code so that failing tests pass,
+then compare differences between failing and passing tests
+</li>
+</ol>
+</li>
+<li>"Scientific Method" (from reading)
 <ul class="org-ul">
 <li><b>Stabilize the error</b>
 <ul class="org-ul">
@@ -1436,7 +1454,7 @@ functionality it had before the updates.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Reed Rosenbluth</p>
-<p class="date">Created: 2015-05-05 Tue 13:18</p>
+<p class="date">Created: 2015-05-05 Tue 13:22</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
