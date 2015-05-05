@@ -28,7 +28,7 @@
          was assumed to be working correctly
        - *Hamilton, Ontario, July 1985*
          - During treatment, machine stopped and reported "no dose"
-         - This was a common occurence, so the technician pressed "P"
+         - This was a common occurrence, so the technician pressed "P"
            to proceed and re-deliver the dose
          - This happened four more times, after which the machine went
            into suspend mode
@@ -182,6 +182,7 @@
                 }
             }
           #+END_SRC
+       - The =join()= method will block until the thread finishes.
        - Threads can make code slower... how?
        - A *Race Condition* occurs when two or more threads can access
          shared data and they try to change it at the same time.
@@ -446,7 +447,7 @@
      - *Integration Testing*: assess software with respect to
        *subsystem design*
        - tests whether the *interfaces between modules* in a give
-         subsystem have consistent assumtions and communicate correctly.
+         subsystem have consistent assumptions and communicate correctly.
      - *Module Testing*: assess software with respect to *detailed design*
        - tests *individual modules* in isolation.
      - *Unit Testing*: assess software with respect to *implementation*
@@ -513,7 +514,7 @@
          the equivalence classes (multiple fault assumption).
        - guarantees notion of completeness
      - *Weak Robust*
-       - considers invalid values, single fault assumtion
+       - considers invalid values, single fault assumption
      - *Strong Robust*
        - considers invalid values, multiple fault assumption
 ** DONE White-Box Testing
